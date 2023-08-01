@@ -1,38 +1,167 @@
+/* src/App.css */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
 .App {
+  display: block;
+  min-height: 100%;
+}
+
+.title-container {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.title-container h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.title-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.theme-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Light theme styles */
+body .light-theme {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.light-theme .theme-buttons .MuiButton-root.Mui-active {
+  background-color: #bfdfff; /* Change this color to your preferred active button color */
+}
+
+.theme-buttons .MuiButton-startIcon{
+  margin-right: 0;
+}
+
+.theme-buttons .MuiButtonBase-root{
+  border-radius: 0;
+}
+
+/* Dark theme styles */
+body .dark-theme {
+  background-color: #121212;
+  color: #f8f9fa;
+}
+
+.dark-theme .theme-buttons .MuiButton-root.Mui-active {
+  background-color: #007af4; /* Change this color to your preferred active button color */
+}
+
+.title-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title-container h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.theme-buttons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar {
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+
 }
 
-@keyframes App-logo-spin {
+
+.search-bar form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-bar .MuiTextField-root {
+  margin-right: 10px;
+  width: 100%;
+}
+
+.search-bar .MuiInputBase-root {
+  height: 40.5px;
+}
+
+
+.typing-span {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0; /* Set initial width to 0 */
+  animation: typing 5s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
   from {
-    transform: rotate(0deg);
+    width: 0; /* Start with width 0 */
   }
   to {
-    transform: rotate(360deg);
+    width: 100%; /* End with 100% width */
   }
 }
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: #212529;
+  }
+}
+
+.results-view {
+  /* Add transition properties for opacity and transform */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.dark-theme .results-view .MuiPaper-root{
+  background: #515f80;
+}
+
+.light-theme .results-view .MuiPaper-root{
+  background: #f2ebdd;
+}
+
+
+
+
+
