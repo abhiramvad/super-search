@@ -17,7 +17,11 @@ const ResultsView: React.FC<ResultProps> = ({ data }) => {
                         <Card className="result-card">
                             <CardContent>
                                 <Typography variant="body1" component="div">
-                                    {item._source.text}
+                                    {item.content}
+                                </Typography>
+
+                                <Typography variant="body2" component="div">
+                                    <a href={item.URL}>{item.URL}</a>
                                 </Typography>
                             </CardContent>
                         </Card>

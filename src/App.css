@@ -154,11 +154,15 @@ body .dark-theme {
 }
 
 .dark-theme .results-view .MuiPaper-root{
-  background: #515f80;
+  background: #010203;
 }
 
 .light-theme .results-view .MuiPaper-root{
   background: #f2ebdd;
+}
+
+.MuiTypography-body2{
+  color: blue;
 }
 
 

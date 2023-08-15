@@ -2,13 +2,14 @@
 import React, { useState } from 'react';
 import useElasticsearch from '../hooks/useElasticsearch';
 import { TextField, Button } from '@mui/material';
+import useSearchApi from "../hooks/useSearchApi";
 interface SearchBarProps {
     onSearchResults: (data: any[]) => void; // Callback to pass fetched data to parent component
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({onSearchResults}) => {
     const [query, setQuery] = useState<string>('');
-    const { search } = useElasticsearch();
+    const { search } = useSearchApi();
     const handleSearch = async (e: React.FormEvent) => {
         e.preventDefault();
         const results = await search(query);

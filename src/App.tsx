@@ -25,7 +25,7 @@ const App: React.FC = () => {
   };
 
   const handleCopyExampleToClipboard = () => {
-    const exampleText = "What is a computer?";
+    const exampleText = "What is a OAuth?";
     navigator.clipboard.writeText(exampleText)
         .catch((error) => {
           console.error('Failed to copy example to clipboard:', error);
@@ -44,7 +44,7 @@ const App: React.FC = () => {
             <p>
               Ask in natural language
             </p>
-            <span style={{marginRight:"10px"}}>Example: "What is a computer?"</span>
+            <span style={{marginRight:"10px"}}>Example: "What is OAuth?"</span>
             <FileCopyIcon style={{ cursor: 'pointer' }} onClick={() => handleCopyExampleToClipboard()} />
           </div>
           <div className="theme-buttons">
